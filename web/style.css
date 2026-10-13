@@ -1,0 +1,189 @@
+:root {
+  --bg-dark: #0f172a;
+  --card-dark: #1e293b;
+  --border-dark: #334155;
+  --accent-gold: #f59e0b;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-blue: #3b82f6;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: var(--accent-gold);
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.game-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas#gameCanvas {
+  background: #5c94fc;
+  border: 3px solid var(--border-dark);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.controls-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+  background: var(--card-dark);
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-dark);
+  align-items: center;
+  justify-content: center;
+  width: 960px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+button.danger {
+  background: var(--accent-red);
+}
+
+button.danger:hover {
+  background: #dc2626;
+}
+
+button.gold {
+  background: var(--accent-gold);
+  color: #111;
+}
+
+button.gold:hover {
+  background: #d97706;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.speed-control input[type="range"] {
+  width: 120px;
+  accent-color: var(--accent-gold);
+}
+
+.side-column {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  background: var(--card-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 6px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.stat-label {
+  color: var(--text-muted);
+}
+
+.stat-val {
+  font-weight: 700;
+}
+
+.stat-val.gold { color: var(--accent-gold); }
+.stat-val.green { color: var(--accent-green); }
+.stat-val.blue { color: var(--accent-blue); }
+
+canvas#brainCanvas {
+  background: #0b1120;
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  display: block;
+}
+
+.key-hint {
+  display: inline-block;
+  background: #334155;
+  color: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: monospace;
+}

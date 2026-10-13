@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mario Bros AI: Self-Learning Reinforcement Learning & Self-Play</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>SUPER MARIO BROS: SELF-LEARNING AI</h1>
+    <p>Neuroevolution, Deep Sensory RL & Real-Time Generational Self-Play Framework</p>
+  </header>
+
+  <div class="main-container">
+    <div class="game-column">
+      <canvas id="gameCanvas" width="960" height="540"></canvas>
+      
+      <div class="controls-bar">
+        <button id="btnPause">Pause [Space]</button>
+        <button id="btnNextGen">Evolve Next Gen</button>
+        <button id="btnFastForward" class="gold">Fast-Train +10 Gens</button>
+        <button id="btnHumanPlay">Human Play [P]</button>
+        <button id="btnStage">Cycle Stage [C]</button>
+        <button id="btnReset" class="danger">Reset to Gen 0</button>
+
+        <div class="speed-control">
+          <span>Speed:</span>
+          <input type="range" id="speedSlider" min="1" max="20" value="1">
+          <span id="speedLabel" class="stat-val gold">1x</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-column">
+      <div class="card">
+        <h3>EVOLUTION TELEMETRY</h3>
+        <div class="stat-row">
+          <span class="stat-label">Generation:</span>
+          <span id="valGen" class="stat-val gold">GEN 0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Stage Challenge:</span>
+          <span id="valStage" class="stat-val blue">Stage 1: Beginner Plains</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Population Alive:</span>
+          <span id="valAlive" class="stat-val green">40 / 40</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Current Best Fitness:</span>
+          <span id="valBestFit" class="stat-val">0.0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">All-Time High Fitness:</span>
+          <span id="valAllTimeFit" class="stat-val gold">0.0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Course Distance:</span>
+          <span id="valDist" class="stat-val">0m / 2200m (0%)</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Mortality Breakdown:</span>
+          <span id="valDeaths" class="stat-label" style="font-size: 0.8rem; color: #f87171;">Pits: 0 | Enemies: 0 | Timeouts: 0</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>AI BRAIN (LIVE ACTIVATIONS)</h3>
+        <canvas id="brainCanvas" width="288" height="200"></canvas>
+      </div>
+
+      <div class="card">
+        <h3>HOW SELF-PLAY WORKS</h3>
+        <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">
+          <strong>Gen 0:</strong> Completely randomized weights. Marios stumble and discover the terrain.<br><br>
+          <strong>Gen 5+:</strong> Natural selection filters agents that move right and jump over initial obstacles.<br><br>
+          <strong>Self-Play Ghost:</strong> The best champion from previous generations runs alongside as a cyan ghost racer, setting benchmark challenges!<br><br>
+          <strong>Curriculum:</strong> Reaching the flagpole unlocks harder stages with Goombas, Koopas, and lava pits.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="mario_ai.js"></script>
+</body>
+</html>
